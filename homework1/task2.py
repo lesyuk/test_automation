@@ -10,4 +10,4 @@ def print_sum(n):
             exit()
     print(sum_n)
 
-user_input = print_sum(input('Enter number: '))
+print_sum(input('Enter number: '))
