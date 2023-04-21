@@ -22,6 +22,8 @@ nums = [849, 200, 809, 164, 926, 84, 892, # print odds: 849, 809
         666,
         2, 2, 4, 3] # print evens: 2, 2, 4
 
+# Own solution
+
 """
 flag values:
 1 - odd
@@ -52,3 +54,33 @@ for i in nums:
         case 4:
             if i == 666:
                 flag = 1
+
+# Logic solution
+
+make_print = True
+modulo = True
+
+for i in nums:
+    if i == 666:
+        make_print = not make_print
+        if make_print: # using the walrus operator: if make_print := not make_print
+            modulo = not modulo
+    elif make_print and i % 2 == modulo:
+        print(i)
+
+# Math solution
+
+cnt = 0
+
+for num in nums:
+    if num == 666:
+        cnt += 1
+        continue
+    if cnt % 2 != 0: # Whether to print or not. True if cnt even
+        continue
+    elif (cnt / 2) % 2 == 0: # Print odd. Every 2 numbers of cnt / 2 will be even
+        if num % 2 != 0:
+            print(num)
+    elif (cnt / 2) % 2 != 0: # Print even. Every 2 numbers of cnt / 2 will be odd
+        if num % 2 == 0:
+            print(num)
