@@ -18,12 +18,12 @@
 # # 4. Получаем каждое возвращенное значение и выстраиваем друг за другом
 # print(list(res1)) # [-7, 2, -15, 40, 72]
 #
-# # res2 = map(lambda x, y: x * y, list1, list2) Сей# тоже самое
+# # res2 = map(lambda x, y: x * y, list1, list2) # тоже самое
 # # print(list(res2)) # [-7, 2, -15, 40, 72]
 #
 # # можно использовать любой итерируемый объект
-# res2 = map(lambda x, y: x * y, 'adb', [1, 2, 3])
-# print(list(res2)) # ['a', 'dd', 'bbb']
+res2 = map(lambda x, y: x * y, 'adb', [1, 2, 3])
+print('Map result', list(res2)) # ['a', 'dd', 'bbb']
 #
 #
 
@@ -47,7 +47,7 @@
 # print(list(res3)) # ['a', 'a', 'a', 'a', 'a', 'a']
 
 
-# с версии 3 reduce не в билтинах, функция высшего порядка
+# с версии 3 reduce не в билдинах, функция высшего порядка
 from functools import reduce
 
 numbers = [2, 3, 4, 5, 6] # sum 20
@@ -67,7 +67,7 @@ print(res1) # 20
 
 # тоже самое
 res2 = reduce(lambda temp_result, x: temp_result + x, numbers)
-print(res2)
+print('Reduce reslut:', res2)
 
 # встроенный sum в питоне
 res3 = sum(numbers)

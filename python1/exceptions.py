@@ -28,14 +28,14 @@ except ZeroDivisionError: #
 # try:
 #     1 + 'a'
 #     1 / 0
-# except ZeroDivisionError:
+# except TypeError:
 #     print('Something bad happened') # TypeError: unsupported operand type(s) for +: 'int' and 'str'
 
 # у питона на все случаи жизни есть свои исключения: типа, значения, zerodivision, пустой индекс
 
 # try:
 #     [][0] # обращение к пустому списку
-# except ZeroDivisionError:
+# except IndexError:
 #     print('Something bad happened')
 
 # простой пример: хотим заставить пользователя ввести два числа и попробовать поделить их друг на друга

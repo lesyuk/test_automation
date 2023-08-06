@@ -6,7 +6,7 @@ num = 42
 num1 = 42_000_000
 
 print(num1)
-print(random.randint(1,1999))
+print(random.randint(1, 1999))
 
 # проверка типа переменной. type так же входит в глобальную область видимости
 print(type(num))

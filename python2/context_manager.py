@@ -32,7 +32,7 @@ class FileOpener:
     def __enter__(self):
         self.file = open(self.file_path, 'r')
         print(self.file.name)
-        return self
+        return self # возвращается в конструкцию with as
 
     def read(self):
         print(self.file.readline())
@@ -45,11 +45,11 @@ class FileOpener:
         self.file.close()
 
 
-f_opener = FileOpener('test')
-# с помощью чего-то сделать что-то
-# в момент with вызываем __enter__
-# return self попадет в as test_file
-with f_opener as test_file: # as test_file - записываем результат в test_file
+# Читается как "с помощью чего-то сделать что-то"
+# В конструкции with вызывается метод класса __enter__
+# return self в методе __enter__ попадает в as test_file
+# Инициализацию объекта можно засторить в переменную и передать в контекст ее: f_opener = FileOpener('test')
+with FileOpener('test') as test_file: # здесь вызывается __init__ и __enter__
     test_file.read()
     test_file.read()
     test_file.read()
@@ -79,7 +79,7 @@ with file_opener('test') as f:
     print(f.readline())
 
 
-# Когда нужно писать на классе а когда на функции
-# если простой пример то функция
-# если что-то хранить / менять, то класс (когда контекстный менеджер делает что-то +- сложное)
+# Когда нужно писать на классе а когда на функции?
+# Eсли простой пример то функция
+# Eсли что-то хранить / менять, то класс (когда контекстный менеджер делает что-то +- сложное)
 
